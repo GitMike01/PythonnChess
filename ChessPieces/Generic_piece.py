@@ -1,4 +1,4 @@
-from ChessPieces.Piece_color import PieceColor
+from utils.Piece_color import PieceColor
 
 class GenericPiece:
     id = 0

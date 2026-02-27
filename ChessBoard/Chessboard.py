@@ -7,6 +7,7 @@ from ChessPieces.Bishop_piece import BishopPiece
 from ChessPieces.King_piece import KingPiece
 from ChessPieces.Queen_piece import QueenPiece
 from utils.Piece_color import PieceColor
+from collections import deque
 
 class Chessboard():
     def __init__(self):
@@ -43,3 +44,5 @@ class Chessboard():
             for j in range(self.size):
                 piece = self.board[i][j]
                 print(piece.__repr__(), end=" ")
+    
+    
