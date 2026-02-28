@@ -44,5 +44,8 @@ class Chessboard():
             for j in range(self.size):
                 piece = self.board[i][j]
                 print(piece.__repr__(), end=" ")
+
+    def get_size(self):
+        return self.size
     
     
