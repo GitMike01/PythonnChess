@@ -2,10 +2,11 @@ from utils.Piece_color import PieceColor
 
 class GenericPiece:
     id = 0
-    def __init__ (self, pos_x: int, pos_y: int, p_color: PieceColor):
+    def __init__ (self, pos_x: int, pos_y: int, p_color: PieceColor, image=None):
         self.pos_x = pos_x
         self.pos_y = pos_y
         self.p_color = p_color
+        self.image = image
         GenericPiece.id += 1
 
     def __str__(self) -> str:

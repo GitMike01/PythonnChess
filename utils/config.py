@@ -1,0 +1,16 @@
+# utils/config.py
+
+SQUARE_SIZE = 115
+BOARD_ROWS = 8
+BOARD_COLS = 8
+
+# Calcoli derivati
+BOARD_WIDTH = SQUARE_SIZE * BOARD_COLS
+BOARD_HEIGHT = SQUARE_SIZE * BOARD_ROWS
+
+# Proporzioni pezzi
+PIECE_SCALE_FACTOR = 0.85
+PIECE_SIZE = int(SQUARE_SIZE * PIECE_SCALE_FACTOR)
+OFFSET = (SQUARE_SIZE - PIECE_SIZE) // 2
+
+DIR_PATH = "/home/tullio/Desktop/PythonChess/pieces"
