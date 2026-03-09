@@ -54,6 +54,7 @@ class WindowSetup():
 
         self.current_turn = self.p1
         self.next_turn = self.p2
+        self.valid_moves = None
 
     def events(self):
         for event in pygame.event.get():
@@ -82,7 +83,7 @@ class WindowSetup():
                 self.check_y = col
 
                 self.selected_piece.rect.topleft = self.get_screen_coord(row, col)
-                
+                self.valid_moves = self.selected_piece.valid_move(self.chessboard.board)
                 self.chessboard.board[row][col] = None
             else: 
                 self.selected_piece = None
@@ -128,6 +129,7 @@ class WindowSetup():
             self.draw_centered_text("Blacks", font, (255, 255, 255), lower_side)
 
             self.draw_chessboard()
+            self.draw_highlights(self.valid_moves)
             self.draw_pieces()
 
             self.screen.blit(self.board_surface, (self.offset_x, self.offset_y))
