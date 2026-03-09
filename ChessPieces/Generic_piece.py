@@ -1,4 +1,6 @@
 from utils.Piece_color import PieceColor
+from abc import ABC, abstractmethod
+from typing import List, Tuple
 
 class GenericPiece:
     id = 0
@@ -8,7 +10,11 @@ class GenericPiece:
         self.p_color = p_color
         self.image = image
         GenericPiece.id += 1
-
+    
+    @abstractmethod
+    def valid_move(self, board) -> List[Tuple[int, int]]:
+        pass
+    
     def __str__(self) -> str:
         return f"{self.__class__.__name__}, id = {self.id}, pos_x = {self.pos_x}, pos_y = {self. pos_y}, ({self.p_color})"
     
