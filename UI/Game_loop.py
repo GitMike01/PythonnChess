@@ -54,7 +54,7 @@ class WindowSetup():
 
         self.current_turn = self.p1
         self.next_turn = self.p2
-        self.valid_moves = None
+        self.valid_moves = []
 
     def events(self):
         for event in pygame.event.get():
@@ -84,6 +84,7 @@ class WindowSetup():
 
                 self.selected_piece.rect.topleft = self.get_screen_coord(row, col)
                 self.valid_moves = self.selected_piece.valid_move(self.chessboard.board)
+                print(f"Mosse trovate per il pezzo: {self.valid_moves}")
                 self.chessboard.board[row][col] = None
             else: 
                 self.selected_piece = None

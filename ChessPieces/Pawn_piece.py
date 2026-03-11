@@ -18,20 +18,5 @@ class PawnPiece(GenericPiece):
     """
     def valid_move(self, board) -> list:
         move_coords = []
-        if self.p_color == PieceColor.WHITE:
-            movements = self.movement * -1
-            for move in movements:
-                x, y = move.value
-                if board(self.pos_x + x + 0 if self.has_moved else 1, self.pos_y + y) == None and move == Directions.UP: 
-                    move_coords.append((self.pos_x + x, self.pos_y + y))
-                elif board(self.pos_x + x, self.pos_y + y) != None:
-                    move_coords.append((self.pos_x + x, self.pos_y + y))
-        else:
-            if self.has_moved:
-                for move in self.movement:
-                    x, y = move.value
-                    if board(self.pos_x + x + 0 if self.has_moved else 1, self.pos_y + y) == None and move == Directions.UP: 
-                        move_coords.append((self.pos_x + x, self.pos_y + y))
-                    elif board(self.pos_x + x, self.pos_y + y) != None:
-                        move_coords.append((self.pos_x + x, self.pos_y + y))
+        
         return move_coords

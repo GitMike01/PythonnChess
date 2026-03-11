@@ -30,10 +30,10 @@ class Chessboard():
 
         for i in range(self.size):
             pawn_img = self.res.sprites[PieceColor.WHITE]["pawn"]
-            self.board[6, i] = PawnPiece(1, i, PieceColor.WHITE, image=pawn_img)
+            self.board[6, i] = PawnPiece(6, i, PieceColor.WHITE, image=pawn_img)
             piece_class = row_0_layout[i]
             piece_type = row_0_types[i]
-            self.board[7, i] = piece_class(0, i, PieceColor.WHITE, image=self.res.sprites[PieceColor.WHITE][piece_type])
+            self.board[7, i] = piece_class(7, i, PieceColor.WHITE, image=self.res.sprites[PieceColor.WHITE][piece_type])
             
     def chessboard_blacks_init(self):
         row_7_layout = [
@@ -44,10 +44,10 @@ class Chessboard():
 
         for i in range(self.size):
             pawn_img = self.res.sprites[PieceColor.BLACK]["pawn"]
-            self.board[1, i] = PawnPiece(6, i, PieceColor.BLACK, image=pawn_img)
+            self.board[1, i] = PawnPiece(1, i, PieceColor.BLACK, image=pawn_img)
             piece_class = row_7_layout[i]
             piece_type = row_6_types[i]
-            self.board[0, i] = piece_class(7, i, PieceColor.BLACK, image=self.res.sprites[PieceColor.BLACK][piece_type])
+            self.board[0, i] = piece_class(0, i, PieceColor.BLACK, image=self.res.sprites[PieceColor.BLACK][piece_type])
 
     def print_chessboard_status(self):
         for i in range(self.size):

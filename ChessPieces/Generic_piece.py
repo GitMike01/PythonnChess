@@ -20,14 +20,14 @@ class GenericPiece:
     
     def __repr__(self) -> str: #type: ignore
         if self.__class__.__name__ == "PawnPiece":
-            return f"PN"
+            return f"WP" if self.p_color == PieceColor.WHITE else f"BP"
         elif self.__class__.__name__ == "RookPiece":
-            return f"RK"
+            return f"WR" if self.p_color == PieceColor.WHITE else f"BR"
         elif self.__class__.__name__ == "KnightPiece":
-            return f"KT"
+            return f"WK" if self.p_color == PieceColor.WHITE else f"BK"
         elif self.__class__.__name__ == "BishopPiece":
-            return f"BP"
+            return f"WB" if self.p_color == PieceColor.WHITE else f"BB"
         elif self.__class__.__name__ == "KingPiece":
-            return f"KG"
+            return f"WK" if self.p_color == PieceColor.WHITE else f"BK"
         elif self.__class__.__name__ == "QueenPiece":
-            return f"QN"
+            return f"WQ" if self.p_color == PieceColor.WHITE else f"BQ"
