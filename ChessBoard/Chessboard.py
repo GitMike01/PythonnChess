@@ -24,7 +24,7 @@ class Chessboard():
     def chessboard_whites_init(self):
         row_0_layout = [
             RookPiece, KnightPiece, BishopPiece, KingPiece, QueenPiece,
-            BishopPiece, KnightPiece, BishopPiece, 
+            BishopPiece, KnightPiece, RookPiece, 
         ]
         row_0_types = ["rook", "knight", "bishop", "king", "queen", "bishop", "knight", "rook"]
 

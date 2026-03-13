@@ -11,12 +11,32 @@ class PawnPiece(GenericPiece):
         self.id = GenericPiece.id
         self.range = 1
         self.has_moved = False
-        self.movement = [Directions.UP, Directions.UP_LEFT, Directions.UP_RIGHT]
 
     """
     pawn can move only Directions.UP, can also move Direction.UP_LEFT/UP_RIGHT if it can take a piece
     """
     def valid_move(self, board) -> list:
         move_coords = []
+        r, c = self.pos_x, self.pos_y
         
+        direction = -1 if self.p_color == PieceColor.WHITE else 1
+        
+        next_r = r + direction
+        if 0 <= next_r < 8:
+            if board[next_r][c] is None:
+                move_coords.append((next_r, c))
+                
+                if not self.has_moved:
+                    double_r = r + (2 * direction)
+                    if 0 <= double_r < 8 and board[double_r][c] is None:
+                        move_coords.append((double_r, c))
+                        self.has_moved = True
+
+        for dc in [-1, 1]:
+            nr, nc = r + direction, c + dc
+            if 0 <= nr < 8 and 0 <= nc < 8:
+                target = board[nr][nc]
+                if target is not None and target.p_color != self.p_color:
+                    move_coords.append((nr, nc))
+                
         return move_coords

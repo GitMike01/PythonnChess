@@ -101,7 +101,7 @@ class WindowSetup():
             self.chessboard.board[self.check_x][self.check_y] = self.selected_piece
             self.selected_piece.rect.topleft = self.get_screen_coord(self.check_x, self.check_y)
             
-        elif 0 <= new_row < 8 and 0 <= new_col < 8:
+        elif 0 <= new_row < 8 and 0 <= new_col < 8 and (new_row, new_col) in self.valid_moves:
             self.chessboard.board[new_row][new_col] = self.selected_piece
             new_pos = self.get_screen_coord(new_row, new_col)
             self.selected_piece.rect.topleft = new_pos
